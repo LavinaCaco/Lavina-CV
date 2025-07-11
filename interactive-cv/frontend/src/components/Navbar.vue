@@ -1,7 +1,7 @@
 <template>
   <header class="bg-white shadow-md sticky top-0 z-50">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-2xl font-bold text-gray-800">destadrns</div>
+      <div class="text-2xl font-bold text-gray-800">Lavina Arsya Aryanto</div>
 
       <ul class="flex space-x-6">
         <li><a href="#profil" class="text-gray-600 hover:text-sky-400 transition-all duration-300">Profil</a></li>
