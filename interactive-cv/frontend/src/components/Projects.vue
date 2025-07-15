@@ -11,15 +11,17 @@ const imageMap = {
   rental
 };
 
+
 const projects = ref([]);
 
+const API_URL = import.meta.env.PROD ? '/api/projects' :
+'http://localhost:3000/api/projects';
 onMounted(async () => {
-  try {
-    const response = await axios.get('http://localhost:3000/api/projects');
-    projects.value = response.data;
-  } catch (error) {
-    console.error(error);
-  }
+try {
+projects.value = (await axios.get(API_URL)).data;
+} catch (error) {
+console.error('Gagal mengambil data proyek:', error);
+}
 });
 </script>
 

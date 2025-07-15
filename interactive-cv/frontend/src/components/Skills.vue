@@ -4,12 +4,14 @@ import axios from 'axios';
 
 const skills = ref([]);
 
+const API_URL = import.meta.env.PROD ? '/api/skills' :
+'http://localhost:3000/api/skills';
+
 onMounted(async () => {
-  try {
-    const response = await axios.get('http://localhost:3000/api/skills');
-    skills.value = response.data;
-  } catch (error) {
-    console.error("Gagal mengambil data keahlian:", error);
+ try {
+skills.value = (await axios.get(API_URL)).data;
+} catch (error) {
+console.error('Gagal mengambil data skill:', error);
     // Data fallback untuk tampilan
     skills.value = [
         { name: 'React.js', iconUrl: 'URL_TO_YOUR_ICON', level: 'Mahir' },
